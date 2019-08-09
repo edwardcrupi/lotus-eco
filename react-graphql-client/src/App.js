@@ -304,10 +304,6 @@ class App extends Component {
           answers={this.state.answers}
           suggestions={this.state.suggestions}
           />
-        <Products
-          products={this.state.products}
-          addVariantToCart={this.addVariantToCart}
-        />
         <Cart
           checkout={this.state.checkout}
           isCartOpen={this.state.isCartOpen}
