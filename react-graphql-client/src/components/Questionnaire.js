@@ -21,25 +21,17 @@ class Questionnaire extends Component {
       })
     }
   }
-  onComponentDidUpdate(){
 
-  }
   render() {
-    let currentQuestion=this.state.currentQuestion;
-    let questionnaire = this.props.questions.map((question, index) => {
-      if(index===currentQuestion){
-        return (
-          <Question
-            key={index}
-            question={question}
-            responses={this.props.responses[index]}
+    let currentQuestion = this.state.currentQuestion;
+    let questionnaire = currentQuestion < this.props.questions.length ?
+          [<Question
+            key="0"
+            question={this.props.questions[currentQuestion]}
+            responses={this.props.responses[currentQuestion]}
             onResponseClick={this.onResponseClick}
-          />
-        );
-      } else {
-        return '';
-      }
-    });
+          />] :
+      [<p key="0">Based on your responses of {this.props.responses[0][this.props.answers[0]]} and {this.props.responses[1][this.props.answers[1]]}: We reckon you should just buy something</p>];
 
     return (
       <div className="Product-wrapper">
