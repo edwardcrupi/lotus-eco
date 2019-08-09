@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Products from './components/Products';
 import Cart from './components/Cart';
+import Questionnaire from './components/Questionnaire';
 import {gql} from 'babel-plugin-graphql-js-client-transform';
 
 class App extends Component {
@@ -11,7 +12,11 @@ class App extends Component {
       isCartOpen: false,
       checkout: { lineItems: [] },
       products: [],
-      shop: {}
+      shop: {},
+      questions: ['What is your menstrual duration?', 'What is your menstrual flow?'],
+      responses: [['SHORT', 'MEDIUM', 'LONG'], ['Light flow', 'Medium flow', 'Heavy flow']],
+      currentQuestion: 0,
+      answers: []
     };
 
     this.handleCartClose = this.handleCartClose.bind(this);
@@ -283,6 +288,12 @@ class App extends Component {
             <h2>{this.state.shop.description}</h2>
           </div>
         </header>
+        <Questionnaire
+          questions={this.state.questions}
+          responses={this.state.responses}
+          currentQuestion={this.state.currentQuestion}
+          answers={this.state.answers}
+          />
         <Products
           products={this.state.products}
           addVariantToCart={this.addVariantToCart}
