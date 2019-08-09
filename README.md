@@ -1,4 +1,5 @@
-# Storefront API Examples
+# Lotus Eco
+Sample repo for the lotus eco
 
 Shopify's [Storefront API](https://help.shopify.com/api/storefront-api) allows you to build custom ecommerce experiences.
 

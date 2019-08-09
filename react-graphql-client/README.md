@@ -1,4 +1,4 @@
-# react-graphql-client
+# Sampe app for Lotus Eco
 
 An example using [graphql-js-client](https://github.com/Shopify/graphql-js-client) built with [React](https://facebook.github.io/react/).
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
