@@ -31,7 +31,10 @@ class Questionnaire extends Component {
             responses={this.props.responses[currentQuestion]}
             onResponseClick={this.onResponseClick}
           />] :
-      [<p key="0">Based on your responses of {this.props.responses[0][this.props.answers[0]]} and {this.props.responses[1][this.props.answers[1]]}: We reckon you should just buy something</p>];
+      [<p key="0">Based on your responses
+        of {this.props.responses[0][this.props.answers[0]]} and {this.props.responses[1][this.props.answers[1]]}
+       : 
+       We reckon you should just buy {this.props.suggestions[this.props.answers[0]][this.props.answers[1]]} whatevers</p>];
 
     return (
       <div className="Product-wrapper">

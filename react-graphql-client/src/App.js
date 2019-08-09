@@ -16,7 +16,16 @@ class App extends Component {
       questions: ['What is your menstrual duration?', 'What is your menstrual flow?'],
       responses: [['SHORT', 'MEDIUM', 'LONG'], ['Light flow', 'Medium flow', 'Heavy flow']],
       currentQuestion: 0,
-      answers: []
+      answers: [],
+      suggestions: [['6 Mini, 5 Regular, 4 Super',
+                      '5 Mini, 5 Regular, 5 Super',
+                      '4 Mini, 5 Regular, 4 Super'],
+                    ['10 Mini, 6 Regular, 4 Super',
+                      '6 Mini, 7 Regular, 4 Super',
+                      '4 Mini, 6 Regular, 4 Super'],
+                    ['14 Mini, 10 Regular, 4 Super',
+                      '10 Mini, 10 Regular, 4 Super',
+                      '6 Mini, 10 Regular, 4 Super']]
     };
 
     this.handleCartClose = this.handleCartClose.bind(this);
@@ -293,6 +302,7 @@ class App extends Component {
           responses={this.state.responses}
           currentQuestion={this.state.currentQuestion}
           answers={this.state.answers}
+          suggestions={this.state.suggestions}
           />
         <Products
           products={this.state.products}
