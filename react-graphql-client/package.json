@@ -5,13 +5,11 @@
   "dependencies": {
     "babel-plugin-graphql-js-client-transform": "^1.1.0",
     "graphql-js-client": "^0.6.2",
+    "help": "^3.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "graphql-js-schema": "^0.5.0",
-    "graphql-js-schema-fetch": "^1.1.2",
-    "rimraf": "^2.6.1",
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
@@ -36,6 +34,8 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.10.0",
     "fs-extra": "0.30.0",
+    "graphql-js-schema": "^0.5.0",
+    "graphql-js-schema-fetch": "^1.1.2",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.3",
     "jest": "18.1.0",
@@ -44,6 +44,7 @@
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^0.5.2",
+    "rimraf": "^2.6.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
