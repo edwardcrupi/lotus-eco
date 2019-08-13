@@ -1,9 +1,0 @@
-{
-  "presets": [
-    "shopify/node"
-  ],
-  "plugins": [
-    ["add-shopify-header", {"files": [ "src/index.js" ]}],
-    "graphql-js-client-transform"
-  ]
-}
