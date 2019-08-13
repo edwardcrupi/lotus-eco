@@ -193,7 +193,6 @@ class App extends Component {
         }
       }
     `, {checkoutId, lineItems}).then(res => {
-      console.log(res);
       this.setState({
         checkout: res.model.checkoutLineItemsAdd.checkout
       });
