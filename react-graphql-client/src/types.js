@@ -707,6 +707,7 @@ const Mutation = {
     "checkoutLineItemsAdd": "CheckoutLineItemsAddPayload",
     "checkoutLineItemsRemove": "CheckoutLineItemsRemovePayload",
     "checkoutLineItemsUpdate": "CheckoutLineItemsUpdatePayload",
+    "checkoutLineItemsReplace": "CheckoutLineItemsReplacePayload",
     "checkoutShippingAddressUpdate": "CheckoutShippingAddressUpdatePayload",
     "checkoutShippingLineUpdate": "CheckoutShippingLineUpdatePayload",
     "customerAccessTokenCreate": "CustomerAccessTokenCreatePayload",
@@ -1043,6 +1044,18 @@ const CheckoutLineItemsAddPayload = {
 };
 Object.freeze(CheckoutLineItemsAddPayload.fieldBaseTypes);
 var CheckoutLineItemsAddPayload$1 = Object.freeze(CheckoutLineItemsAddPayload);
+
+const CheckoutLineItemsReplacePayload = {
+  "name": "CheckoutLineItemsReplacePayload",
+  "kind": "OBJECT",
+  "fieldBaseTypes": {
+    "checkout": "Checkout",
+    "userErrors": "UserError"
+  },
+  "implementsNode": false
+};
+Object.freeze(CheckoutLineItemsReplacePayload.fieldBaseTypes);
+var CheckoutLineItemsReplacePayload$1 = Object.freeze(CheckoutLineItemsReplacePayload);
 
 const CheckoutLineItemsRemovePayload = {
   "name": "CheckoutLineItemsRemovePayload",
@@ -1502,6 +1515,7 @@ Types.types["CheckoutEmailUpdatePayload"] = CheckoutEmailUpdatePayload$1;
 Types.types["CheckoutGiftCardApplyPayload"] = CheckoutGiftCardApplyPayload$1;
 Types.types["CheckoutGiftCardRemovePayload"] = CheckoutGiftCardRemovePayload$1;
 Types.types["CheckoutLineItemsAddPayload"] = CheckoutLineItemsAddPayload$1;
+Types.types["CheckoutLineItemsReplacePayload"] = CheckoutLineItemsReplacePayload$1;
 Types.types["CheckoutLineItemsRemovePayload"] = CheckoutLineItemsRemovePayload$1;
 Types.types["CheckoutLineItemsUpdatePayload"] = CheckoutLineItemsUpdatePayload$1;
 Types.types["CheckoutLineItemUpdateInput"] = CheckoutLineItemUpdateInput$1;

@@ -18,7 +18,16 @@ class Questionnaire extends Component {
       this.setState({
         currentQuestion: this.state.currentQuestion+1,
         answers: updatedAnswers
-      })
+      });
+      if(this.state.currentQuestion === this.props.questions.length-1){
+        let response1 = this.props.answers[0];
+        let response2 = this.props.answers[1];
+        let variantIds = [this.props.products[0].variants[0].id,
+                      this.props.products[1].variants[0].id,
+                      this.props.products[2].variants[0].id]
+        let quantities = [this.props.quantities[response1][response2][0], this.props.quantities[response1][response2][1], this.props.quantities[response1][response2][2]];
+        this.props.addVariantsToCart(variantIds, quantities);
+      }
     }
   }
 
@@ -34,8 +43,7 @@ class Questionnaire extends Component {
       [<p key="0">Based on your responses
         of {this.props.responses[0][this.props.answers[0]]} and {this.props.responses[1][this.props.answers[1]]}
        : 
-       We reckon you should just buy {this.props.suggestions[this.props.answers[0]][this.props.answers[1]]} whatevers</p>];
-
+       We reckon you should just buy {this.props.suggestions[this.props.answers[0]][this.props.answers[1]]} whatevers, so we've added them to your cart</p>];
     return (
       <div className="Product-wrapper">
         {questionnaire}

@@ -25,11 +25,21 @@ class App extends Component {
                       '4 Mini, 6 Regular, 4 Super'],
                     ['14 Mini, 10 Regular, 4 Super',
                       '10 Mini, 10 Regular, 4 Super',
-                      '6 Mini, 10 Regular, 4 Super']]
+                      '6 Mini, 10 Regular, 4 Super']],
+      suggestedQuantities: [[[6,5,4],
+                            [5,5,5],
+                            [4,5,4]],
+                            [[10,6,4],
+                             [6,7,4],
+                             [4,6,4]],
+                            [[14,10,4],
+                            [10,10,4],
+                            [6,10,4]]]
     };
 
     this.handleCartClose = this.handleCartClose.bind(this);
     this.addVariantToCart = this.addVariantToCart.bind(this);
+    this.addVariantsToCart = this.addVariantsToCart.bind(this);
     this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
   }
@@ -135,6 +145,57 @@ class App extends Component {
       this.setState({
         shop: res.model.shop,
         products: res.model.shop.products,
+      });
+    });
+  }
+
+  addVariantsToCart(variantIds, quantities){
+    const client = this.props.client;
+    this.setState({
+      isCartOpen: true,
+    });
+    const lineItems = variantIds.map(function(variantId, index){
+      return {variantId, quantity: quantities[index] };
+    });
+    const checkoutId = this.state.checkout.id
+    return client.send(gql(client)`
+      mutation checkoutLineItemsAdd($checkoutId: ID!, $lineItems: [CheckoutLineItemInput!]!) {
+        checkoutLineItemsAdd(checkoutId: $checkoutId, lineItems: $lineItems) {
+          userErrors {
+            message
+            field
+          }
+          checkout {
+            webUrl
+            subtotalPrice
+            totalTax
+            totalPrice
+            lineItems (first:250) {
+              pageInfo {
+                hasNextPage
+                hasPreviousPage
+              }
+              edges {
+                node {
+                  title
+                  variant {
+                    title
+                    image {
+                      src
+                    }
+                    price
+                  }
+                  quantity
+                }
+              }
+            }
+          }
+        }
+      }
+    `, {checkoutId, lineItems}).then(res => {
+      console.log(res);
+      this.setState({
+        checkout: res.model.checkoutLineItemsAdd.checkout
       });
     });
   }
@@ -300,9 +361,12 @@ class App extends Component {
         <Questionnaire
           questions={this.state.questions}
           responses={this.state.responses}
+          products={this.state.products}
+          addVariantsToCart={this.addVariantsToCart}
           currentQuestion={this.state.currentQuestion}
           answers={this.state.answers}
           suggestions={this.state.suggestions}
+          quantities={this.state.suggestedQuantities}
           />
         <Cart
           checkout={this.state.checkout}
