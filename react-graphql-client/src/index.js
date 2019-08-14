@@ -4,9 +4,6 @@ import App from './App';
 import Client from 'graphql-js-client';
 import typeBundle from './types';
 import '../../shared/app.css';
-import $ from "jquery";
-import 'semantic-ui-css/semantic.min.css';
-import 'semantic-ui-css/semantic.js';
 
 export const client = new Client(typeBundle, {
   url: 'https://graphql.myshopify.com/api/graphql',
