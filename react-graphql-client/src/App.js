@@ -3,6 +3,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Questionnaire from './components/Questionnaire';
 import {gql} from 'babel-plugin-graphql-js-client-transform';
+import { Button } from 'semantic-ui-react'
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,16 @@ class App extends Component {
       products: [],
       shop: {},
       questions: ['What is your menstrual duration?', 'What is your menstrual flow?'],
-      responses: [['SHORT', 'MEDIUM', 'LONG'], ['Light flow', 'Medium flow', 'Heavy flow']],
+      responses: [[
+      <Button>SHORT</Button>,
+      <Button>MEDIUM</Button>,
+      <Button>LONG</Button>
+      ],
+      [
+      <Button>Light flow</Button>,
+      <Button>Medium flow</Button>,
+      <Button>Heavy flow</Button>
+      ]],
       currentQuestion: 0,
       answers: [],
       suggestions: [['6 Mini, 5 Regular, 4 Super',

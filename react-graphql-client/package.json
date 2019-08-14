@@ -5,9 +5,11 @@
   "dependencies": {
     "babel-plugin-graphql-js-client-transform": "^1.1.0",
     "graphql-js-client": "^0.6.2",
-    "help": "^3.0.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "jquery": "^3.4.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.81.2"
   },
   "devDependencies": {
     "autoprefixer": "6.7.2",
@@ -24,7 +26,7 @@
     "css-loader": "0.26.1",
     "detect-port": "1.1.0",
     "dotenv": "2.0.0",
-    "eslint": "4.18.2",
+    "eslint": "3.16.1",
     "eslint-config-react-app": "^0.6.2",
     "eslint-loader": "1.6.0",
     "eslint-plugin-flowtype": "2.21.0",
@@ -48,7 +50,7 @@
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
-    "webpack-dev-server": "3.1.11",
+    "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.2"
   },

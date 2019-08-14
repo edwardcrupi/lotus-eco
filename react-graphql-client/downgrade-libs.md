@@ -1,0 +1,5 @@
+    "graphql-js-schema": "^0.5.0",
+    "graphql-js-schema-fetch": "^1.1.2",
+    "rimraf": "^2.6.1",
+        "eslint": "3.16.1",
+            "webpack-dev-server": "1.16.2",
